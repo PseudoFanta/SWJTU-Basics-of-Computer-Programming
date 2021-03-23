@@ -1,0 +1,42 @@
+//ABC找最大
+
+#include <iostream>
+#include<iomanip>
+using namespace std;
+
+void main()
+{
+    cout<<"2018000000"<<setw(15)<<"PseudoFanta"<<endl;
+
+	double a, b, c;//定义变量 a b c，
+	cout << "请输入欲判断的a b c 的值……";
+	cin >> a >> b >> c;
+	cout << endl;
+	//a b c输入，准备就绪
+
+	if (a>b)
+	{if (a>c)
+	{
+		cout << "最大者为"<<a<<endl;
+	}
+	else
+	{
+		cout << "最大者为"<<c<<endl;
+	}
+	}
+	else
+	{
+		if (b>c)
+		{
+		cout << "最大者为"<<b<<endl;
+		}
+		else
+		{
+		cout << "最大者为"<<c<<endl;
+		}
+
+	}
+
+	system("pause");
+
+}
