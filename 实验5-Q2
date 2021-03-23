@@ -1,0 +1,50 @@
+2.十进制-八进制转换
+【实验源程序】
+#include<iomanip>
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	int oct,dec;//十进制存储空间，八进制存储空间
+	int weight=1,result=0,temp=0;//进制，结果，临时空间
+	int radix;//进制判断
+
+	cout<<"请输入您的目标进制：十进制输入10，八进制输入8……"<<endl;
+	cin>>radix;
+	//目标进制确定，if分流可
+
+	cout<<"请输入您想要转换进制的数字：";
+
+	if (radix==8)//目标八进制
+	{
+		cin>>dec;//存入八进制空间
+		while(dec!=0)//短除后的结果是0，在此之前循环
+		{
+			temp=dec%8;//八进制的某个位数
+			result=result+temp*weight;//Total
+			weight=weight*10;//合计倍增，准备取得下一个位
+			dec=dec/8;//短除的商，准备下一轮
+		}
+	}
+	else//目标十进制
+	{
+		cin>>oct;
+		while(oct!=0)//短除后的结果是0，在此之前循环
+		{
+			temp=oct%10;//十进制的某个位数
+			result=result+temp*weight;//Total
+			weight=weight*8;//合计倍增，准备取得下一个位
+			oct=oct/10;//短除的商，准备下一轮
+		}
+
+	}
+	
+	cout<<"转换后的结果是："<<result<<endl;//输出结果
+
+	system("pause");
+
+}
