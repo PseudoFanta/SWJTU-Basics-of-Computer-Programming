@@ -1,0 +1,27 @@
+//小写转大写
+
+#include<iomanip>
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	char temp[50];//定义字符数组长度
+	int length, i;//字符数组长度，循环变量
+
+	cout << "请输入一个字符串，小写字母将被转换为大写字母……\n";
+	cin >> temp;
+
+	length = strlen(temp);//获取字符数组长度
+
+	for ( i = 0; i < length; i++)
+		if ((int(temp[i]) >= 97 && int(temp[i]) <= 123))//如果int化的字母在a(97)与z(123)之间
+			temp[i] = temp[i] - 32;//大写回复
+
+	cout << "转换后的结果是……\n" << temp<<endl;
+
+	system("pause");
+}
