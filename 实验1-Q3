@@ -1,0 +1,21 @@
+//千克和磅的单位转换
+
+#include <iostream>
+using namespace std;
+
+void main(void)
+{
+	cout << "2018000000" << "    " << "PseudoFanta" << endl;
+
+	double kilogram;//变量名称“kilogram”，为输入的千克数
+	double pound;//变量名称“pound”，为输出的磅数
+
+	cout << "请输入千克数……" << endl;
+	cin >> kilogram;
+
+	pound = kilogram * 2.2;//计算
+	cout << "单位转换为"<<pound << "磅" << endl;
+
+	system("pause");
+
+}
