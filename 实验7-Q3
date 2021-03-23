@@ -1,0 +1,42 @@
+//a^b+b^a
+
+#include<iostream>
+#include<iomanip>
+#include<ctime>
+using namespace std;
+
+void main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	int a, b, result1, result2, result ;
+	//数字1，数字2，a^b,b^a,总和
+
+	cout << "求a的b次方与b的a次方的和。" << endl;
+	cout << "请输入两个数字……";
+	cin >> a >> b;//存储变量
+	cout << endl;
+
+	int square(int, int);//声明函数
+
+	result1 = square(a, b);
+	result2 = square(b, a);
+	result = result1+result2;
+
+	cout << a << "的" << b << "次方是：" << result1<<endl;
+	cout << b << "的" << a << "次方是：" << result2 << endl;
+	cout << "二者和为：" << result << endl;
+
+	system("pause");
+}
+
+int square(int x, int y)
+{
+	int i;//循环控制变量
+	int result=1;//结果
+	for (i = 0; i < y; i++)
+	{
+		result = result * x;
+	}
+	return result;
+}
