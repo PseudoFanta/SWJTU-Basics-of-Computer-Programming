@@ -1,0 +1,26 @@
+//找字符Aa
+
+#include<iomanip>
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	string temp;//定义一个字符串
+	int length,i,a=0;//字符串长度，循环变量，a的个数
+	cout << "请输入一个字符串。将统计其中A/a的个数……\n";
+	getline(cin, temp);
+
+	length = temp.size();//长度确定
+
+	for (i = 0; i < length; i++)//字符串每个元素
+		if (int(temp[i]) == 65 || int(temp[i] == 97))//大写或小写
+			a++;//加一个
+
+	cout << "A/a的个数共计" << a << "个。\n";
+
+	system("pause");
+}
