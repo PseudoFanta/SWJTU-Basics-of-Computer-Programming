@@ -1,0 +1,32 @@
+//兔子数列
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+void fbnq(int *p, int n)
+{
+	int* q;
+	int i;
+	for (i = 0, q = p + n - 1; i < n / 2; i++, p++, q--)
+	{//前后交换，指针向中间靠拢，循环n/2次
+		*p += *q;
+		*q = *p - *q;
+		*p = *p - *q;
+	}
+}
+int main()
+{
+	int i[20] = { 1,1 }, j;
+	cout << "2018000000" << setw(15) << "PseudoFanta\n";
+	for (j = 2; j < 20; j++)
+	{
+		i[j] = i[j - 1] + i[j - 2];
+	}
+	cout << "斐波那契数列倒序存放结果：\n";
+	fbnq(i, 20);
+	for (j = 0; j < 20; j++)
+	{
+		cout << i[j] << "  ";
+	}
+	system("pause");
+}
