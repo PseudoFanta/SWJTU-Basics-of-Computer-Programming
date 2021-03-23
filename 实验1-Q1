@@ -25,3 +25,5 @@ void main(void)
 	cout << "              *             " << endl;
 
 	system("pause");
+
+}
