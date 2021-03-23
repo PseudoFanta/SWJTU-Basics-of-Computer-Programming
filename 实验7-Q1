@@ -1,0 +1,38 @@
+【实验源程序】
+//分段函数
+
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+void main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta"<<endl;
+	
+	double x, y;//定义变量存储x y值
+
+	cout << "输入一个x值……" ;
+	cin >> x;	//セーブしました。
+	cout << endl;
+
+	if (x>0)
+	{
+		y = sqrt(x);//Situation No.1
+	}
+	else
+	{
+		if (x<0)
+		{
+			y = fabs(x); //Situation No.2
+		}
+		else
+		{
+			y = 0; //Situation No.3
+		}
+	}//判断x的大小，并且生成对应的x值
+
+	cout << "y=" << y<<endl;
+
+	system("pause");
+
+}
