@@ -1,0 +1,47 @@
+//和为7
+
+#include<iomanip>
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	int num[10], i;//定义10个数字存储空间，以及其循环变量
+	int processing, temp, sum;//定义处理中的数据,缓存区
+
+	cout << "请输入10个数字：\n";
+
+	for (i = 0; i < 10; i++)
+	{
+		cin >> num[i];
+	}//10个数字存储完毕
+
+	cout << "各位数字和为7的数字有：";
+
+	for (i = 0; i < 10; i++)
+	{
+		temp = 0;//复位temp
+		sum = 0;//复位sum
+		processing = num[i];//调用当前量Stand-by
+
+		while (processing != 0)
+		{
+			temp = processing % 10;//提取最后的一位
+			sum = sum + temp;//计算和
+			processing = processing / 10;//下一位
+		}//在循环运转完毕之后，获得已经计算完毕之后的sum变量和不知道是啥的temp变量
+
+		if (sum == 7)
+		{
+			cout << num[i] << "  ";
+		}
+		//输出这个合乎要求的数字
+
+	}
+
+	cout << endl;
+	system("pause");
+
+}
