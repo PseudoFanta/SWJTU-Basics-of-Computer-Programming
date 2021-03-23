@@ -1,0 +1,29 @@
+//出星号
+
+#include<iomanip>
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	int line, i,j;//行数,行列循环控制变量
+
+	cout << "请输入行数……";
+	cin >> line;
+	cout << endl;
+
+	for (i = line; i >0; i--)
+	{
+		for (j=1; j<=2*i-2; j++)
+			cout << " ";//输出空格
+		for (j=1; j <= 2 * line; j++)
+			cout << "*";//输出*
+		cout << endl;
+	}
+		
+	cout << endl;
+	system("pause");
+}
