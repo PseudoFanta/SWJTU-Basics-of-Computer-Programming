@@ -1,0 +1,54 @@
+//学生成绩统计
+#include <iostream>
+#include<iomanip>
+#include<ctime>
+using namespace std;
+int main()
+{
+	srand(time(NULL));
+	cout << "2018000000" << setw(15) << "PseudoFanta\n";
+
+	int grade[30], i = 0;//成绩数组，循环变量
+	int *mark = grade;//指向成绩数组的指针
+	int a = 0, b = 0, c = 0, d = 0, e = 0;//5个分数段的人数
+
+	cout << "学生的成绩如下：\n";
+	for (mark = grade, i = 0; i < 30; i++)
+	{
+		mark[i] = rand() % 101;
+		cout <<setw(4)<< mark[i];
+		if (i % 10 == 9) cout << endl;
+	}
+
+	cout << "学生成绩统计如下：\n";
+
+	cout << "分数段" << setw(10) << "90-100" << setw(10) << "80-89" <<
+		setw(10) << "70-79" << setw(10) << "60-69" << setw(10) << "60以下" << endl;
+
+	for (mark = grade, i = 0; i < 30; i++)
+	{
+		switch (mark[i]/10)
+		{
+		case 9:
+			a++;
+			break;
+		case 8:
+			b++;
+			break;
+		case 7:
+			c++;
+			break;
+		case 6:
+			d++;
+			break;
+		default:
+			e++;
+			break;
+		}
+	}
+
+	cout << "人数" <<setw(10) << a <<setw(10) << b <<
+		setw(10) << c <<setw(10) << d <<setw(10) << e << endl;
+
+	system("pause");
+}
