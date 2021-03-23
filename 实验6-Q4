@@ -1,0 +1,33 @@
+//分解质因数
+
+#include<iomanip>
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	int i, num;//循环控制变量（首个质数是2），被处理数据
+
+	cout << "请输入一个正整数……";
+	cin >> num;
+
+	cout << "分解质因数的结果为：" << endl;
+	cout << num << "=";
+
+	for ( i = 2; i <=num; i++)
+	{//开始除
+		while (num%i == 0)//如果除得尽
+		{
+			num = num / i;//短除法的商
+			if (num != 1)//还能除的话 	 
+				cout << i << '*';//就输出因数和乘号
+			else//否则就是最后一个了
+				cout << i;//只有一个数字就行
+		}
+	}	
+	cout << endl;
+	system("pause");
+}
