@@ -1,0 +1,24 @@
+//一维数组被三整除
+#include <iostream>
+#include<iomanip>
+using namespace std;
+int main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta\n";
+
+	int a[64] = { 0 }, n = 0,tt=0;//定义一个空数组,以及其最大长度；定义能被3整除的数字个数
+	int *p = a;//指向这个数组的指针
+
+	cout << "请输入您需要判断的数字个数（最大64）……";
+	cin >> n;
+
+	cout << "请输入您需要判断的数字\n";
+	for (p = a; p < a + n; p++) cin >> *p;
+
+	for (p = a; p < a + n; p++) if (*p%3==0) tt++;
+
+	cout << "整个数组中可以被3整除的元素共计" << tt <<"个。"<< endl;
+
+
+	system("pause");
+}
