@@ -1,0 +1,19 @@
+//计算员工工资
+
+#include <iostream>
+using namespace std;
+
+void main(void)
+{
+	cout << "2018000000" << "    " << "PseudoFanta" << endl;
+	double fee;//定义变量“fee"存储员工销售款
+	double salary;//定义变量“salary"存储员工工资
+
+	cout << "请输入员工销售货款……" << endl;
+	cin >> fee;
+	salary = 800 + 0.08*fee;
+	cout << "该员工的工资为" << salary << "元。" << endl;
+
+	system("pause");
+
+}
