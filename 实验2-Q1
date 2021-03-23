@@ -1,0 +1,35 @@
+【实验源程序】
+
+//输出贺卡
+
+#include <iostream>
+#include<string>
+#include<iomanip>
+using namespace std;
+
+void main(void)
+{
+	cout << "2018111636" << "    " << "张震" << endl;
+	string my;//我的名字
+	string their;//对方的名字
+
+	cout << "请输入你的姓名……" << endl;
+	cin >> my;
+	cout << endl;
+
+	cout << "请输入对方的姓名……" << endl;
+	cin >> their;
+	cout << endl;
+
+	//开始输出贺卡
+
+	cout << "====================================" << endl;
+	cout << "           My dear " << their << "," << endl;
+	cout << "       Happy birthday to you!" << endl;
+	cout << "               yours," << endl;
+	cout << "                 "<<my << endl;
+	cout << "====================================" << endl;
+
+system("pause");
+
+}
