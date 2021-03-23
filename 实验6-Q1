@@ -1,0 +1,73 @@
+//不同班级成绩录入プログラム
+
+#include<iomanip>
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	int classnumber, i;//班级的数量，以及其循环变量
+	int seitonumber, j;//学生的数量，以及其循环变量
+	string seitoid;//学生学号
+	int chn, mth, eng;//学生的语数英成绩
+
+	cout << "请输入班级数量……";
+	cin >> classnumber;
+	cout << "========================"<<endl;
+
+
+	for (i = 1; i <= classnumber; i++)
+	{
+		cout << "请输入" << i << "班的学生数量……";
+		cin >> seitonumber;//将这个班级的学生数量确定，作为下一个for的数量；
+		cout << endl;
+
+		for (j = 1;j <= seitonumber; j++)
+		{
+			cout << "请输入第" << j << "个学生的学号、语文、数学、英语成绩：" << endl;
+			cin >> seitoid >> chn >> mth >> eng;
+			//存储了学号和成绩
+
+			cout << "学生" << seitoid;
+
+			//以下判断哪个科目好
+			if (chn > mth)
+			{
+				if (chn > eng)
+				{
+					cout << "语文成绩好！" << endl;
+					cout << "语文成绩为：" << chn << endl;
+				}
+				else
+				{
+					cout << "英语成绩好！" << endl;
+					cout << "英语成绩为：" << eng << endl;
+				}
+			}
+			else
+			{
+				if (mth > eng)
+				{
+					cout << "数学成绩好！" << endl;
+					cout << "数学成绩为：" << mth << endl;
+				}
+				else
+				{
+					cout << "英语成绩好！" << endl;
+					cout << "英语成绩为：" << eng << endl;
+				}
+
+			}
+			//判断和输出均完成
+
+		}
+
+		cout << "========================"<<endl;
+
+	}
+	system("pause");
+
+}
