@@ -1,0 +1,72 @@
+//冒泡查找&折半查找
+
+#include<iostream>
+#include<iomanip>
+#include<ctime>
+using namespace std;
+
+void main()
+{
+	srand(time(NULL));
+	cout << "2018000000" << setw(14) << "PseudoFanta" << endl;
+
+	int a[10];//题目要求的数组
+	int i = 0, j = 0, temp = 0;//循环变量
+	bool flag;//是否调换顺序的标志符号
+	int begin = 0, end = 9, mid = 0;//折半查找的两端与中间
+
+	cout << "10个10-100之间的随机整数为……" << endl;
+	for (i = 0; i < 10; i++)
+	{
+		temp = 10 + rand() % 91;//生成范围在10-100之间的随机数字
+		a[i] = temp;
+		temp = 0;//Reset
+		cout << a[i] << setw(4);
+	}
+	cout << endl;
+
+	//冒泡法降序排列
+	for (i = 0; i < 9; i++)
+	{
+		flag = false;//标志表示否
+		for (j = 0; j < 9 - i; j++)
+		{
+			if (a[j + 1] > a[j])
+			{
+				temp = a[j];
+				a[j] = a[j + 1];
+				a[j + 1] = temp;
+				temp = 0;
+				flag = true;//标志表示已经调整了
+			}
+		}
+		if (flag == false) break;//如果不需要调整就直接escape
+	}
+	cout << "按从大到小排列的结果为……" << endl;
+	for (i = 0; i < 10; i++) cout << a[i] << setw(4);
+	cout << endl;
+
+	//寻找数字
+	cout << "请输入想要查找的数字……";
+	cin >> temp;
+	cout << endl;
+
+	while (end >= begin)
+	{
+		mid = (end + begin) / 2;//中点的位置
+		if (a[mid] == temp)//如果直接撞大运就是中点
+		{
+			end = mid;
+			break;
+		}
+		else
+		{
+			if (temp > a[mid]) end = mid - 1;//大于要左边
+			else begin = mid + 1;//小于要右边
+		}
+	}
+	if (end < begin) cout << "这个数字不在数组里。" << endl;
+	else cout << "这个数字" << temp << "在数组的第" << end + 1 << "个位置。" << endl;
+
+	system("pause");
+}
