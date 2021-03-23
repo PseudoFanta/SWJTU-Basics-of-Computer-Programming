@@ -1,0 +1,35 @@
+【实验源程序】
+//5*5矩阵主对角线找最大值
+
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	int matrix[5][5] ;
+	int i,j, temp;//循环控制变量和多用途变量
+	cout << "请输入一个5*5的矩阵\n";
+	cout << "每个数之间用空格间隔，每行输入完成后按下回车\n";
+	
+	for (i = 0; i < 5; i++)	for (j = 0; j < 5; j++)	cin >> matrix[i][j];//Input
+	j = 0;//复位j变量用于存储行号
+
+	temp = matrix[0][0];//这里temp用来存储最大值，假设第一个最大
+	for (i = 0; i < 5; i++)
+	{
+		if (matrix[i][i] > temp)
+		{
+			temp = matrix[i][i];
+			j = i + 1;
+		}
+	}
+
+	cout << "最大的数为：" << temp << endl;
+	cout << "其行号为：" << j << endl;
+
+	system("pause");
+			
+}
