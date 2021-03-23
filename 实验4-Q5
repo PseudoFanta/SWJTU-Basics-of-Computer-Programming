@@ -1,0 +1,56 @@
+//Janken
+
+#include <iostream>
+#include<string>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+
+void main()
+{
+	cout<<"2018000000"<<setw(15)<<"PseudoFanta"<<endl;
+	
+	int a, b;//甲乙猜拳代码定义
+	int result;//定义结果数值
+
+	cout << "**********新一局**********" << endl;
+	cout << "1.出剪子 " << endl;
+	cout << "2.出石头 " << endl;
+	cout << "3.出布 " << endl;
+	cout << "***************************" << endl;
+	cout << "请输入甲、乙猜拳代码：" << endl;
+	//Guideline输出
+
+	cin >> a >> b;
+	cout << endl;
+
+	result = a - b;
+
+	//准备就绪
+
+	switch (result)
+
+	{
+	case 1:
+		cout << "甲赢，乙输。" << endl;
+		break;
+		//包含石-剪；布-石的情况
+	case 2:
+		cout << "乙赢，甲输。" << endl;
+		break;
+		//包含布-剪的情况
+	case 0:
+		cout << "平局" << endl;
+		break;
+		//两人一样的情况
+	case -1:
+		cout << "乙赢，甲输。" << endl;
+		break;
+		//包含剪-石；石-布的情况
+	case -2:
+		cout << "甲赢，乙输。" << endl;
+		break;
+		//包含剪-布的情况
+	}
+	system("pause");
+}
