@@ -1,0 +1,31 @@
+//泰勒展开-再放送
+#include <iostream>
+#include<iomanip>
+using namespace std;
+int main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta\n";
+
+	int n,x;
+	int i=1;//循环变量
+	double sum = 0;//总和
+	double nume = 1, deno = 1, single = 0;//分子、分母与单项
+	int *m=&n, *y=&x;//指向n，x的指针
+	double *total = &sum;//指向sum的指针
+
+	cout << "请定义x与n的值。整数注意……";
+	cin >> *y >> *m;//存入x n值
+
+	for ( i; i <= *m; i++)
+	{		
+		nume = pow(*y, i	);
+		deno = deno * i;
+		single = nume / deno;
+		cout << "第" << i << "项的值为……" << single << endl;
+		*total = *total + single;		
+	}
+
+	cout << "sum的值为……" << *total << endl;
+
+	system("pause");
+}
