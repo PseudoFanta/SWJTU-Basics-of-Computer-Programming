@@ -1,0 +1,73 @@
+//10个数字的质数寻求
+
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+void main()
+{
+	cout<<"2018000000"<<setw(15)<<"PseudoFanta"<<endl;
+
+	int a[10]={0};
+	int b[10]={0};
+	int i,j;//循环变量，数组下标
+	int temp=0;//最大最小
+
+	cout<<"请输入10个数字……"<<endl;
+	for (i=0;i<10;i++) cin>>a[i];//存入
+	
+	bool prime(int);//声明函数prime找质数
+
+	temp = a[0]; j = 0;//装作最大值是第一个
+	for (i=0;i<10;i++)
+	{
+		if (temp<a[i])
+		{temp=a[i];j=i;}
+	}
+
+	cout<<"a数组中的最大值为"<<temp<<endl;
+	cout<<"其下标为"<<j<<endl;//输出最大值
+
+	temp = a[0]; j = 0;//装作最小值是第一个
+	for (i=0;i<10;i++)
+	{
+		if (temp>a[i])
+		{temp=a[i];j=i;}  
+	}
+
+	cout<<"a数组中的最小值为"<<temp<<endl;
+	cout<<"其下标为"<<j<<endl;//输出最小值
+	
+	temp = 0; j = 9;//复位
+	for (i = 0; i < 10; i++)
+	{
+		if (prime(a[i]) == true)
+		{
+			b[j] = a[i];
+			j--;
+		}
+	}//找质数
+	
+	cout << "反向输出b数组为……" << endl;
+
+	for ( i = 0; i <10; i++)
+	{
+		if (b[i] != 0) cout << setw(10) << b[i];
+	}
+	cout << endl;
+
+	system("pause");
+}
+
+bool prime(int x)//找质数
+{
+	bool flag=true;//判断情况
+	int i;
+	for(i=2;i<sqrt(double(x));i++)
+		if(x%i==0)
+		{
+			flag=false;
+			break;
+		}
+	return flag;
+}
