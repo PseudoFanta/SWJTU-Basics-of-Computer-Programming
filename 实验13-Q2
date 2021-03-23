@@ -1,0 +1,32 @@
+//自然数对
+
+#include <iostream>
+#include<iomanip>
+#include <cmath>
+using namespace std;
+int natu(int a, int b)
+{
+	int iP, iM;
+	double dP, dM;
+	iP = a + b; iM = b - a;
+	dP = (int)sqrt(b + a); dM = (int)sqrt(b - a);
+	//和差开方后取整，因为平方数的根是整数
+	//故根取整	后再平方等于原来的数
+	if (dP * dP == iP && dM * dM == iM)return 1;
+	else return 0;
+}
+int main()
+{
+	int i, j;
+	cout << "2018000000" << setw(15) << "PseudoFanta\n";
+	cout << "自然数对有：\n";
+	for (i = 1; i < 50; i++)
+	{
+		for (j = i + 1; j <= 50; j++)
+		{
+			if (natu(i, j) == 1)
+				cout << "  " << i << "," << j << endl;
+		}
+	}
+	system("pause");
+}
