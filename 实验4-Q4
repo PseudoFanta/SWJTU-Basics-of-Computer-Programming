@@ -1,0 +1,54 @@
+//买笔袋
+
+#include <iostream>
+#include<string>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+
+void main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	int num, price, total;//数量，单品价格，总价
+
+	cout << "お客様购入数量？" << endl;
+	cin >> num;//购买数量Save
+
+	//准备就绪
+
+	switch (num / 50)
+	{
+	case 0:
+		price = 38;
+		break;
+		//Situation No.1
+	case 1:
+		price = 35;
+		break;
+		//Situation No.2
+	case 2:
+	case 3:
+		price = 32;
+		break;
+		//Situation No.3 & 4
+	case 4:
+	case 5:
+		price = 30;
+		break;
+		//Situation No.5 & 6
+	default:
+		price = 28;
+		break;
+		//Situation No.7+
+	}
+
+	//单价确定完成，之后开始计算&输出总价格
+
+	total = num * price;
+
+	cout << "总金额为……￥" << total << endl;
+
+	system("pause");
+
+}
