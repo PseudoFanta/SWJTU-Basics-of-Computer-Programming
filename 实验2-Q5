@@ -1,0 +1,25 @@
+//加法器
+
+#include <iostream>
+#include<string>
+#include<iomanip>
+using namespace std;
+
+void main(void)
+{
+	cout << "2018000000" << "    " << "PseudoFanta" << endl;
+
+	double number1, number2, result;//定义两个变量存储数字1和2，定义另一个变量存储结果
+	cout << "输入数1……" << endl;
+	cin >> number1;
+	cout << "输入数2……" << endl;
+	cin >> number2;
+
+	result = number1 + number2;//计算结果
+
+	cout << "运算结果为……" << result << endl;//输出结果
+
+	system("pause");
+
+
+}
