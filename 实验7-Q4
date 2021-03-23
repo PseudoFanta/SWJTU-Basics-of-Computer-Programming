@@ -1,0 +1,77 @@
+//最大公约数&最小公倍数
+//再放送
+
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+void main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	int num1, num2;//数据空间
+	int result1, result2;//结果空间
+	int temp;//临时空间
+	//当数1<数2时使用，交换数字用
+
+	cout << "请输入欲求最大公因数·最小公倍数的两个数字：";
+	cin >> num1 >> num2;//存入数据
+
+	//必要的调换顺序
+	if (num1 < num2)
+	{
+		temp = num1;		num1 = num2;		num2 = temp;
+	}
+	//调换顺序完成，得到num1>num2的情况
+	
+	int gys(int, int);//公约数自定义函数
+	int gbs(int, int);//公倍数自定义函数
+
+	result1 = gys(num1, num2);
+	result2 = gbs(num1, num2);
+
+	cout << "最大公因数是：" << result1 << endl;
+	cout << "最小公倍数是：" << result2 << endl;
+
+	system("pause");
+
+}
+
+int gys(int x, int y)
+{
+	int temp;
+	temp = x % y;
+	if (temp!=0)
+	{
+		while (temp != 0)
+		{
+			x = y;
+			y = temp;
+			temp = x % y;
+			//辗转相除法
+		}
+	}
+	return y;
+}
+//最大公约数
+int gbs(int x, int y)
+{
+	int temp;
+	int result,xo,yo;//结果输出,xy的备份（original）
+	temp = x % y;
+	xo = x;
+	yo = y;
+	if (temp != 0)
+	{
+		while (temp != 0)
+		{
+			x = y;
+			y = temp;
+			temp = x % y;
+			//辗转相除法
+		}
+	}
+	result = xo * yo / y;
+	return result;
+}
+//最小公倍数
