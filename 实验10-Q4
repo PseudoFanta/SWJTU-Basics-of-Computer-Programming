@@ -1,0 +1,41 @@
+//生徒Info登錄
+
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	int a[20][20];
+	int mei;//学生人数
+	int total,average;//总分和平均分
+	int i = 0, j = 0;//循环变量
+
+	cout << "何名様ですか……";
+	cin >> mei;//多少学生啊
+	
+	cout << "请按如下之顺序输入：\n";
+	cout << "学号" << setw(10) << "科目1" << setw(10) << "科目2" << setw(10) << "科目3" << endl;
+	for (i = 0; i < mei; i++)
+		for (j = 0; j < 4; j++)
+			cin >> a[i][j];//输入成绩
+
+	for (i = 0; i < mei; i++)
+	{
+		total = 0;//每一轮开始时候，需要复位total
+		for (j = 1; j < 4; j++)	total = total + a[i][j];//成绩总和
+		average = total / 3;
+		cout << "学号为" << a[i][0] << "的同学平均分为：" << average<<endl;
+	}
+
+	for (j = 1; j < 4; j++)//科目循环1-3
+	{
+		total = 0;
+		for (i = 0; i < mei; i++) total = total + a[i][j];//同学循环1-n
+		average = total / mei;
+		cout << "科目" << j << "的平均分为：" << average << endl;
+	}
+	system("pause");
+}
