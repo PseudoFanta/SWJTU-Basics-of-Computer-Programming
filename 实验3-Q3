@@ -1,0 +1,33 @@
+//找函数值
+
+#include<iostream>
+#include<string>
+#include<iomanip>
+
+using namespace std;
+void main(void)
+
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	double x, y;//定义变量x y，一个输入一个输出
+
+	cout << "请键入X值……";
+	cin >> x;
+	//存储X值
+
+	if (x < 10 && x >= 1)
+	{
+		y = 3*x - 5;
+		cout << "经计算，Y值为" << y << endl;
+	}
+	else
+	{
+		y = x + 2;
+		cout << "经计算，Y值为" << y << endl;
+ 
+	}
+
+	system("pause");
+
+}
