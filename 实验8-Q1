@@ -1,0 +1,52 @@
+//15个数字的排序
+
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+void main()
+{
+	cout<<"2018000000"<<setw(15)<<"PseudoFanta"<<endl;
+
+	double a[20]={0};
+	int i,j;//循环变量，数组下标
+	double temp=0;//15个数字的总和与平均值
+	cout<<"请输入15个实数："<<endl;
+	for(i=0;i<15;i++) cin>>a[i];//15个数据存入
+
+	for(i=0;i<15;i++)
+	{
+		if (i%5==0)cout<<endl;
+		cout<<setw(10)<<a[i];
+	}
+	cout<<endl;
+	//15个数字排列成5X3矩阵
+
+	for(i=0;i<15;i++) temp=temp+a[i];
+	a[15]=temp/15;//计算平均值
+
+	i=0;j=14;//从起讫两端查找
+	while(i<j)
+	{
+		temp=0;//复位临时区域，用作中转站
+		if(a[i]>a[15]) i++;//大于平均值保持在前
+		if(a[j]<a[15]) j--;//小于平均值保持在后
+		//如若不然，交换位置
+		temp=a[i];
+		a[i]=a[j];
+		a[j]=temp;
+	}
+	
+	cout<<"调整后的数据如下："<<endl;
+	for(i=0;i<15;i++)
+	{
+		if (i%5==0)cout<<endl;
+		cout<<setw(10)<<a[i];
+	}
+	cout<<endl;
+	//15个数字排列成5X3矩阵，再行输出
+	
+	cout<<a[15]<<endl;//输出平均值
+
+	system("pause");
+}
