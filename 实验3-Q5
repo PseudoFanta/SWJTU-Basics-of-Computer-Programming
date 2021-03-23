@@ -1,0 +1,57 @@
+//个税起征点
+
+#include<iostream>
+#include<string>
+#include<iomanip>
+
+using namespace std;
+void main(void)
+
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	double salary=0;//税拔收入
+	double tax=0;//课缴所得税金额
+	double paid=0;//税后收入
+
+	cout << "请输入您的薪水，单位元，税拔……";
+	cin >> salary;
+	cout << endl;
+	//税拔收入
+
+
+	/*
+	设计情况为
+	负数返回不合法
+	3500以下返回不交钱
+	其余各个等级情况下返回税金
+	*/
+
+	//程序继续
+
+	if (salary<0)
+	   {cout<<"您的输入非法。"<<endl;}//Situation No.0
+	else
+	  {if (salary>12500)
+	      {cout<<"范围外。"<<endl;}//Situation No.1
+	   else
+	     {if (salary>=0&&salary<=3500)
+        	 {cout<<"您不必缴纳个人所得税。"<<endl;}//Situation No.2
+		 else
+		     {if (salary>3500&&salary<=5000)
+	             {tax = (salary - 3500)*0.03;}//Situation No.3
+			 else
+			   {if (salary > 5000 && salary <= 8000)
+	               {tax = 45 + (salary - 5000) * 0.1;}//Situation No.4
+			    else
+				   {tax = 45 + 300 + (salary - 8000)*0.2;}//Situatuin No.5
+	           }
+	          paid=salary-tax;//税后计算
+	          cout << "您的税込收入为" << paid<< "元。" << endl;//输出
+	         }
+	      }
+	   }
+
+    system("pause");
+
+}
