@@ -1,0 +1,40 @@
+//使用if语句编程求解两个数中的最大值
+
+#include<iostream>
+#include<string>
+#include<iomanip>
+
+using namespace std;
+void main(void)
+
+{
+	cout << "2018000000" << setw(20) << "PseudoFanta" << endl;
+
+	double number1, number2;
+	//双变量定义完毕，存储数字
+
+	cout << "请输入第一个数字……";
+	cin >> number1;
+	cout << "请输入第二个数字……";
+	cin >> number2;
+
+	//存储完毕
+
+	if (number1 > number2)
+	{
+		cout << "数字1比较大" << endl;
+	};
+	if (number1<number2)
+	{
+		cout << "数字2比较大" << endl;
+	};
+	if (number1 == number2)
+	{
+		cout << "两个数字相等" << endl;
+	};
+
+	//大小判断
+
+	system("pause");
+
+}
