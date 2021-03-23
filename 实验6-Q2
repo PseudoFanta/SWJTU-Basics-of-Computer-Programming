@@ -1,0 +1,34 @@
+//百鸡问题
+
+#include<iomanip>
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	int cocknum, hennum, chicknum;//公鸡母鸡小鸡
+	int temp;//缓存区
+	int total;
+
+	for (cocknum=0;cocknum<=20; cocknum++)//公鸡每种情况検索,全买最多20只
+	{
+		for (hennum = 0; hennum < 34; hennum++)//母鸡每种情况检查，全买最多33.3只
+		{
+			chicknum = 100 - cocknum - hennum;//一共一百只鸡
+			temp = chicknum % 3;//小鸡数量
+
+			total = 5 * cocknum + 3 * hennum + chicknum / 3;//价格计算公式
+
+			if (temp==0&&total==100)
+			{
+				cout << "cocks=" << cocknum << "     "
+					<< "hens=" << hennum << "     "
+					<< "chicken=" << chicknum << endl;
+			}
+		}
+	}
+	system("pause");
+}
