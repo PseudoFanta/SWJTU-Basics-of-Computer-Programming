@@ -1,0 +1,67 @@
+//数组合并
+
+#include <iostream>
+#include <ctime>
+#include <iomanip>
+using namespace std;
+void merge(int a[], int b[], int c[], int m, int n)
+{//数组头指向主函数变量所在位置
+	int i, j, k;
+	for (i = 0, j = 0, k = 0; k <= m + n - 1; k++)
+	{
+		if (i > m - 1) { c[k] = b[j]; j++; }
+		else if (j > n - 1) { c[k] = a[i]; i++; }
+		else if (a[i] < b[j]) { c[k] = a[i]; i++; }
+		else { c[k] = b[j]; j++; }
+	}//小的就先赋值给主数组，然后下标后移
+}//合并
+void bulb(int t[], int n)
+{
+	int i, j;
+	for (i = 0; i < n - 1; i++)
+	{
+		for (j = 0; j < n - 1 - i; j++)
+		{
+			if (t[j] > t[j + 1])
+			{
+				t[j] = t[j + 1] + t[j];
+				t[j + 1] = t[j] - t[j + 1];
+				t[j] = t[j] - t[j + 1];
+			}
+		}
+	}
+}//从小到大排序，采用简单的冒泡排序
+int main()
+{
+	int a[10], b[10], c[20] = { 0 }, i;
+	cout << "2018000000" << setw(15) << "PseudoFanta\n";
+	srand((unsigned)time(0));
+	for (i = 0; i < 10; i++)
+	{
+		a[i] = rand() % 100 + 1;
+		b[i] = rand() % 100 + 1;
+	}//随机生成数组
+	bulb(a, 10); bulb(b, 10);//排序
+	merge(a, b, c, 10, 10);
+	//数组名不加方括号是指向数组头的指针
+	cout << "a数组为：";
+	for (i = 0; i < 10; i++)
+	{
+		cout << setw(5) << a[i];
+	}
+	cout << endl;
+	cout << "b数组为：";
+	for (i = 0; i < 10; i++)
+	{
+		cout << setw(5) << b[i];
+	}
+	cout << endl;
+	cout << "合并结果是：\n";
+	for (i = 0; i < 20; i++)
+	{
+		cout << setw(5) << c[i];
+	}
+	cout << endl;
+	system("pause");
+}
+【运行截图】
