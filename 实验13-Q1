@@ -1,0 +1,39 @@
+【实验源程序】
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+void sum(int a[], int n)//a[]指向指针方式传递来的数组头地址，此时读写的是主函数内的数组
+	{
+		int i, j, sum;
+		for (i = 1; i < n; i++)
+		{
+			sum = 0;
+			for (j = 0; j <= i; j++)//数组头循环到自身
+			{
+				sum += a[j];
+			}
+			a[i] = sum;
+		}
+}
+int main()
+{
+		int a[10] = { 0 };
+		int i;
+		cout << "2018000000" << setw(15) << "PseudoFanta\n";
+		cout << "数组初值为：\n";
+		for (i = 0; i <= 9; i++)
+		{
+			a[i] = 2 * i + 1;
+			cout << a[i] << "\t";
+		}
+		cout << endl;
+		sum(a, 10);
+		cout << "处理后的数组为：\n";
+		for (i = 0; i <= 9; i++)
+		{
+			cout << a[i] << "\t";
+		}
+
+	system("pause");
+}
