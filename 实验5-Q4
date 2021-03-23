@@ -1,0 +1,40 @@
+//正弦函数的泰勒展开
+
+#include<iomanip>
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	double angel, sinx;//角度
+	double item;//单个项大小
+	int sign = -1, n = 1;//正负号
+
+	cout << "请输入您想要计算的角度……";
+	cin >> angel;//存入变量
+
+	angel = (angel / 180)*3.1415926;//弧度制转化
+	item = angel;//存入角度
+	sinx = angel;//暂存结果，完成泰勒公式第一步
+
+	while (item > 0.0001)
+	{
+		item = item * angel*angel / ((n + 1)*(n + 2));
+		//下一个项存入。差异在于上一项分子乘x^2，分母多两个数
+		sinx = sinx + item * sign;
+		//累计新的数字，泰勒公式的第2+项
+		sign = sign * (-1);
+		//调整正负号
+		n = n + 2;
+		//下一部分
+	}
+
+	cout << "sinx=" << sinx << endl;
+	//输出
+
+	system("pause");
+
+}
