@@ -1,0 +1,34 @@
+//循环左移动
+#include <iostream>
+#include<iomanip>
+using namespace std;
+int main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta\n";
+
+	int a[10] = { 0 }, m;
+	int i=0;//回数
+	int temp=0;//临时空间
+	int *p=a;//指向数组的指针
+
+	cout << "请输入10个整数……\n";
+	for (p = a; p < a + 10; p++) cin >> *p;//Save-in
+	cout << "请输入左移长度m……\n";
+	cin >> m;
+	cout << "从左到右，各个元素的数值为……\n";
+	for (p = a; p < a + 10; *p++) cout<<*p<<setw(4);//Print
+	cout << endl;
+
+	while (i < 3)//一次1个移动3回
+	{
+		for (p = a,temp=a[0]; p <a+ 9; p++) *p = *(p + 1);
+		*p = temp;
+		i++;
+	}
+
+	cout << "移动之后，从左到右，各个元素的数值为……\n";
+	for (p = a; p < a + 10; *p++) cout << *p << setw(4);//移动后的
+	cout << endl;
+
+	system("pause");
+}
