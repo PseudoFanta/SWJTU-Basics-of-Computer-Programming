@@ -1,0 +1,52 @@
+5.企业缴税
+【实验源程序】
+//由键盘输入若干职工的工资收入（以负数结束）
+//输出每个职工的工资收入,计算并输出每个职工的缴税额
+//统计并输出职工总人数和总缴税额。
+
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+int main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	int total=0;//定义total，总人数
+	double salary, y, tax=0;//定义三个double类型变量salary-薪水，y-单个人税金，tax-会社缴纳总额
+
+	while (total >= 0)//当total的值大于等于0时执行下面的循环语句
+	{
+		cout<<"输入某人的应税月收入:";
+		cin >> salary;//实际工资存入salary
+		if (salary <= 3500)//判定如果salary<=3500，则执行下面语句
+		{
+			y = 0;//该职工的缴税额为0
+		}
+		else//否则执行下面语句
+			if (salary <= 5000)//判定如果salary<=5000，则执行下面语句
+			{
+				y = (salary - 3500)*0.03;//计算该职工的缴税额
+			}
+			else//否则执行下面语句
+				if (salary <= 8000)//判定如果salary<=8000，则执行下面语句
+				{
+					y = (salary - 3500)*0.10;//计算该职工的缴税额
+				}
+				else//否则执行下面语句
+				{
+					y = (salary - 3500)*0.20;//计算该职工的缴税额
+				}
+
+		cout << "该职工的缴税额为:" << y << endl;//在界面上输出该职工的缴税额
+
+		total++;//total的值加一
+		tax = tax + y;//把tax+y的值赋给tax
+
+		cout << "职工总人数为:" << total << endl;//输出职工总人数
+		cout << "总缴税额为:" << tax << endl;//输出总缴税额
+	}
+
+	system("pause");
+
+}
