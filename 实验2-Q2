@@ -8,7 +8,7 @@ using namespace std;
 
 void main(void)
 {
-	cout << "2018111636" << setw(14) << "张震" << endl;
+	cout << "2018000000" << setw(14) << "PseudoFanta" << endl;
 
 	double StudentID, HM, CP, UE, AVE;//设置double变量存储学号，高数，普物，英语,平均分数
 	string const NAME = "赵六";//学生姓名常量
