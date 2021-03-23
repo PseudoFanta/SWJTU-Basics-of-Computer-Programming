@@ -1,0 +1,51 @@
+//最大公约数和最小公倍数。
+
+#include<iomanip>
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	int num1,num2;//数据存放空间
+	int num01,num02;//数据备份空间
+	int temp;//临时空间
+	//当数1<数2时使用，交换数字用
+	//辗转相除的结果存放
+
+	//准备就绪
+
+	cout<<"请输入欲求最大公因数·最小公倍数的两个数字：";
+	cin>>num1>>num2;//存入数据
+
+	num01=num1;num02=num2;//备份完成
+
+	//必要的调换顺序
+	if (num1<num2)
+	{
+		temp=num1;		num1=num2;		num2=temp;		temp=0;
+	}
+	//调换顺序完成，得到num1>num2的情况
+	//同时复位了temp变量，再次使用OK
+
+	temp=num1%num2;
+
+	if (temp!=0)
+	{
+		while (temp!=0)
+		{
+			num1=num2;
+			num2=temp;
+			temp=num1%num2;
+			//辗转相除法
+		}
+	}
+
+	cout<<"最大公因数为："<<num2<<endl;
+	cout<<"最小公倍数为："<<num01*num02/num2<<endl;
+
+	system("pause");
+
+}
