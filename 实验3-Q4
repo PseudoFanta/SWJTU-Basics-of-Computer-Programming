@@ -1,0 +1,32 @@
+//买打印纸
+
+#include<iostream>
+#include<string>
+#include<iomanip>
+
+using namespace std;
+void main(void)
+
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	int n;//打印纸的数量
+	int fee;//费用
+
+	cout << "请输入欲购买的打印纸数量，单位为包……";
+	cin >> n;
+
+	if (n < 100)
+	{fee = 20 * n; };
+	//状况1
+
+	if (n >= 100)
+	{fee = 16 * n; };
+	//状况2
+
+
+	cout << "费用共计" << fee << "元。" << endl;
+
+	system("pause");
+
+}
