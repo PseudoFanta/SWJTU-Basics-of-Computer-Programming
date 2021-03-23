@@ -1,0 +1,41 @@
+//完数
+
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+void main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	int complete(int,int);//声明
+
+	int m, n;
+	int result = 0;//i是循环控制变量
+	cout << "请输入数字范围的起讫点……";
+	cin >> m >> n;//范围起讫点
+
+	result = complete(m,n);
+
+	cout << m << "到" << n << "之间所有完数的和为……" << result << endl;
+
+	system("pause");
+}
+
+int complete(int a, int b)
+{
+	int i, sum = 0, r, currentno, stt;//循环控制变量（因子），总和，当前check的数字，因子总和
+	for (currentno = a; currentno <= b; currentno++)//从起讫点开始循环
+	{
+		stt = 0;//重置因子总和
+		for (i = 1; i < currentno; i++)//因子从1循环到自身
+		{
+			r = currentno % i;
+			if (r == 0)//正确即存入
+				stt = stt + i;
+		}
+		if (stt == currentno)
+			sum = sum + currentno;//一样即存入sum
+	}
+	return sum;
+}
