@@ -1,0 +1,40 @@
+//两个三角形
+
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	int const M = 100;
+	int x[M][M];
+	int m,k=1;//题设信息导入
+	int i,j;//循环变量
+
+	cout << "请输入m值……";
+	cin >> m;
+	cout << endl;
+
+	for(j = 0; j < m; j++)
+		for(i = m - 1; i >= j; i--)
+			x[i][j] = k++;
+
+	for(i=0;i<m;i++)
+	{
+		for (j = 0; j <= i; j++) cout << setw(4) << x[i][j];
+		cout << endl;
+	}
+
+	cout << "==================================\n";
+
+	for (i = 0; i < m; i++)
+	{
+		for (j = 0; j < m - i - 1; j++) cout << setw(3) << "  ";
+		for (j = 0; j <= i; j++) cout << setw(6) << x[i][j];
+		cout << endl;
+	}
+
+	system("pause");
+}
