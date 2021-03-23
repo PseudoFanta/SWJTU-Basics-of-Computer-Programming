@@ -1,0 +1,31 @@
+//找字符第一次出现位置
+
+#include<iomanip>
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	string temp;
+	char letter;//要找的字母
+	int length, i;//字符串长度，循环变量
+	cout << "请输入一个字符串……\n";
+	getline(cin, temp);//定义字符串并且输入
+	cout << "请输入一个英文字母，程序将查找其首次出现的位置……\n";
+	cin >> letter;//欲查找的字母输入
+
+	length = temp.size();
+	for (i = 0; i < length; i++)//在字符串内
+		if (temp[i] == letter)//如果找到了
+		{
+			cout << "字母" << letter << "在字符串" << temp << "中首次出现在第" << i + 1 << "个。\n";
+			break;
+		}
+
+	if(i==length) 	cout << "字母" << letter << "在字符串" << temp << "中并未出现。\n";
+
+	system("pause");
+}
