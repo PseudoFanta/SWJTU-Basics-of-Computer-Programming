@@ -1,0 +1,26 @@
+//猴子吃桃子
+
+#include<iomanip>
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	int n = 1, day = 10;
+	//倒推办法：原来为Y=X/2-1，则反向为X=(Y+1)*2
+	//设定n为10th日的桃子数目，day为日时
+	//准备就绪
+
+	do
+	{
+		n = (n + 1) * 2;//变化规律
+
+		--day;//往前推一天
+	} while (day!=1);//第一天的时候结束循环
+
+	cout << "第一天猴子采集了" << n << "个桃子。" << endl;
+
+	system("pause");
+}
