@@ -1,0 +1,35 @@
+//能否被7整除
+
+#include<iostream>
+#include<string>
+#include<iomanip>
+
+using namespace std;
+void main(void)
+
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	cout << "请输入您需要判定的数字……";
+	int number;
+	cin >> number;
+	//定义变量存数字+存完了
+
+	double result;
+	result = number % 7;
+
+	if (result == 0)
+	{
+		cout << "成功！这个数字能被7整除。" << endl;
+	}
+	else
+	{
+		cout << "失败！这个数字无法被7整除。" << endl;
+		cout<<"原因为：此数字除以7之后的结果为："<<result<<endl;
+	};
+
+	//7的判定
+
+	system("pause");
+
+}
