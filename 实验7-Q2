@@ -1,0 +1,83 @@
+//十以内加减法
+
+#include<iostream>
+#include<iomanip>
+#include<ctime>
+using namespace std;
+
+void main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+	
+	int calculation(int, int, char);//声明函数
+	srand(time(NULL));//随机数字种子
+
+	int num_a, num_b,num_op;//数字a，数字b，符号确定数字
+	char op;//运算符号
+	int temp;//缓存区，调整大小时使用
+	int caluser,result;//用户计算结果，正确答案
+
+	num_op = 1 + rand() % 3;//3种类运算符号
+	num_a = 1 + rand() % 10;
+	num_b = 1 + rand() % 10;//a&b的范围
+
+	if (num_a<num_b)
+	{
+		temp = num_a;
+		num_a = num_b;
+		num_b = temp;
+		temp = 0;
+	}
+	//必要时的大小交换
+
+	switch (num_op)
+	{
+	case 1:
+		op = '+';
+		break;
+	case 2:
+		op = '-';
+		break;
+	case 3:
+		op = '*';
+		break;
+	}
+	//生成运算符号
+
+	cout << num_a << op << num_b << '=';
+	cin >> caluser;//存入用户计算结果
+
+	result = calculation(num_a, num_b, op);//计算正确结果
+
+	if (result==caluser)
+	{
+		cout << "计算准确！"<<endl;
+	}
+	else
+	{
+		cout << "计算错误！" << endl;
+		cout << num_a << op << num_b << "=" << result<<endl;
+
+	}
+
+	system("pause");
+
+}
+
+int calculation(int num1, int num2, char op)
+{
+	int result;
+	switch (op)
+	{
+	case '+':
+		result=num1+num2;
+		break;
+	case '-':
+		result=num1-num2;
+		break;
+	case '*':
+		result=num1*num2;
+		break;
+	}
+	return result;
+}
