@@ -1,0 +1,21 @@
+//递归运算
+
+#include <iostream>
+#include<iomanip>
+using namespace std;
+int function(int n)
+{
+	int ret;
+	if (n > 1)ret = function(n - 1) + (int)pow(2.0, n);//按照定义，递归调用
+	else ret = 2;
+	return ret;
+}
+int main()
+{
+	int n;
+	cout << "2018000000" << setw(15) << "PseudoFanta\n";
+	cout << "从键盘输入n值：";
+	cin >> n;
+	cout << "该数列的第" << n << "项为" << function(n);
+	system("pause");
+}
