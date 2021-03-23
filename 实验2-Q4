@@ -1,0 +1,32 @@
+//万有引力计算
+
+#include <iostream>
+#include<string>
+#include<iomanip>
+using namespace std;
+
+void main(void)
+{
+	cout << "2018000000" << setw(14) << "PseudoFanta" << endl;
+
+	double F, ms, me, r;
+	//定义double变量存储万有引力F，太阳质量ms，地球质量me，日地间距r
+	const double G = 6.67259e-11;
+	//定义常量G
+
+	cout << "输入太阳的质量：" << endl;
+	cin >> ms;
+	cout << "输入地球的质量：" << endl;
+	cin >> me;
+	cout << "输入日地间距：" << endl;
+	cin >> r;
+
+	F = G * ms*me / (r*r);
+
+	cout << "太阳与地球之间的万有引力大小为:" << endl;
+	cout << setiosflags(ios::scientific) << F << "N" << endl;
+	cout << resetiosflags(ios::scientific);
+   
+ system(“pause”)
+
+}
