@@ -1,0 +1,53 @@
+Way1//使用char数组方式完成
+//字符串每个字母加10
+
+#include<iomanip>
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	char temp[50];//字符数组定义
+	int length, i;//定义长度与循环变量
+
+	cout << "请输入一个字符串……\n";
+	gets_s(temp);//字符数组输入
+	length = strlen(temp);//长度Get
+
+	for (i = 0; i < length; i++) temp[i] = temp[i] + 10;//每个字符+10
+
+	cout << "转换后的字符串为……\n" << temp << endl;
+
+	system("pause");
+}
+
+//分割线分割线分割线分割线分割线分割线分割线分割线分割线分割线分割线分割线分割线分割线分割线分割线分割线分割线分割线分割线分割线分割线分割线
+
+Way2//使用string方式完成
+//字符串每个字母加10
+
+#include<iomanip>
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+	cout << "2018000000" << setw(15) << "PseudoFanta" << endl;
+
+	string temp;//字符串定义
+	int length, i;//定义长度与循环变量
+
+	cout << "请输入一个字符串……\n";
+	getline(cin, temp);
+	length = size(temp);//长度Get
+
+	for (i = 0; i < length; i++) temp[i] = temp[i] + 10;//每个字符+10
+
+	cout << "转换后的字符串为……\n" << temp << endl;
+
+	system("pause");
+}
